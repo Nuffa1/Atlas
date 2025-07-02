@@ -12,7 +12,13 @@
 		<tbody>
 			<tr>
 				<td data-bind="text: ko.i18n('cs.manager.concept.tabs.details.conceptName', 'Concept Name')"></td>
-				<td data-bind="text:CONCEPT_NAME"></td>
+				<td>
+   					<a data-bind="
+     				attr: { href: 'https://loinc.org/' + CONCEPT_CODE },
+      				text: CONCEPT_NAME
+    				" target="_blank" rel="noopener noreferrer"></a>
+  				</td>
+				
 			</tr>
 			<tr>
 				<td data-bind="text: ko.i18n('cs.manager.concept.tabs.details.domainId', 'Domain Id')"></td>
