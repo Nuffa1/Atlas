@@ -78,7 +78,7 @@ define(
 					}
 				});
 				this.pageTitle = ko.pureComputed(() => {
-					let pageTitle = "ATLAS";
+					let pageTitle = "Nyel's Atlas";
 					switch (this.router.currentView()) {
 						case 'loading':
 							pageTitle = `${pageTitle}: ` + ko.i18n('common.loading', 'Loading')();
