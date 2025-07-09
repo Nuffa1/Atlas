@@ -13,17 +13,15 @@
 			<tr>
 				<td data-bind="text: ko.i18n('cs.manager.concept.tabs.details.conceptName', 'Concept Name')"></td>
 				<td>
-   					<a data-bind="if: text: VOCABULARY_ID() == 'LOINC' && CONCEPT_CODE() != null,
-	  				visible: CONCEPT_CODE() != null,
-	  				// Use the LOINC URL format to link to the concept
-	  				// https://loinc.org/12345-6
-	  				// where 12345-6 is the CONCEPT_CODE
-	  				// Note: CONCEPT_CODE is expected to be a string
-	  				// and CONCEPT_NAME is expected to be a string
-	  				// and both are observable properties.
+					<div data-bind="if: text: VOCABULARY_ID() == 'LOINC">
+   					<a data-bind="
      				attr: { href: 'https://loinc.org/' + CONCEPT_CODE },
       				text: CONCEPT_NAME
     				" target="_blank" rel="noopener noreferrer"></a>
+					</div>
+					<div data-bind="if: text: VOCABULARY_ID() != 'LOINC">
+   					<span data-bind="text: CONCEPT_NAME"></span>
+					</div>
   				</td>
 				
 			</tr>
