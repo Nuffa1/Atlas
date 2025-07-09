@@ -13,16 +13,16 @@
 			<tr>
 				<td data-bind="text: ko.i18n('cs.manager.concept.tabs.details.conceptName', 'Concept Name')"></td>
 				<td>
-					<div data-bind="if: text: VOCABULARY_ID() == 'LOINC">
-   					<a data-bind="
-     				attr: { href: 'https://loinc.org/' + CONCEPT_CODE },
-      				text: CONCEPT_NAME
-    				" target="_blank" rel="noopener noreferrer"></a>
-					</div>
-					<div data-bind="if: text: VOCABULARY_ID() != 'LOINC">
-   					<span data-bind="text: CONCEPT_NAME"></span>
-					</div>
-  				</td>
+    <div data-bind="if: VOCABULARY_ID() == 'LOINC'">
+        <a data-bind="
+            attr: { href: 'https://loinc.org/' + CONCEPT_CODE },
+            text: CONCEPT_NAME
+        		" target="_blank" rel="noopener noreferrer"></a>
+    			</div>
+    			<div data-bind="if: VOCABULARY_ID() != 'LOINC'">
+        		<span data-bind="text: CONCEPT_NAME"></span>
+    			</div>
+				</td>
 				
 			</tr>
 			<tr>
